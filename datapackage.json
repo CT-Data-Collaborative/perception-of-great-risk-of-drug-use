@@ -1,0 +1,195 @@
+{
+  "name": "perception-of-great-risk-of-drug-use",
+  "datapackage_version": "1.0-beta.18",
+  "title": "Perception of Great Risk of Drug Use",
+  "description": "Perception of Great Risk of Drug Use reports the prevalence of a perception that the use of drugs can cause great harm.",
+  "version": "1.0",
+  "licenses": [{
+    "url": "http://opendatacommons.org/licenses/pddl/",
+    "name": "Open Data Commons Public Domain",
+    "version": "1.0",
+    "id": "odc-pddl"
+  }],
+  "sources": [{
+    "name": "samhsa",
+    "web": ""
+  }],
+  "author":[{
+    "name": "Jenna Daly",
+    "email": "jdaly@ctdata.org",
+    "web": "http://ctdata.org"
+  }],
+  "contributor": [],
+  "resources": [{
+    "path": "data/perception-of-great-risk-of-drug-use-2014.csv",
+    "format": "csv",
+    "schema": {
+      "fields": [{
+          "name": "Region",
+          "type": "string",
+          "dimension": false
+        }, {
+          "name": "FIPS",
+          "type": "string",
+          "dimension": false
+        }, {
+          "name": "Year",
+          "type": "string",
+          "dimension": false
+        }, {
+          "name": "Age Range",
+          "type": "string",
+          "dimension": true,
+          "constraints": {
+            "enum": ["12-17",
+                     "18-25",
+                     "Over 17",
+                     "Over 25"
+            ]
+          }
+        }, {    
+          "name": "Perception of Great Risk of Drug Use",
+          "type": "string",
+          "dimension": true,
+          "constraints": {
+            "enum": ["Perceptions of Great Risk of Having Five or More Drinks of an Alcoholic Beverage Once or Twice a Week",
+                     "Perceptions of Great Risk of Smoking Marijuana Once a Month",                                          
+                     "Perceptions of Great Risk of Smoking One or More Packs of Cigarettes per Day"
+            ]
+          }
+        }, {          
+          "name": "Measure Type",
+          "type": "string",
+          "dimension": true,
+          "constraints": {
+            "enum": ["Percent"]
+          }
+        }, {
+          "name": "Variable",
+          "type": "string",
+          "dimension": true,
+          "constraints": {
+            "enum": ["Perception of Great Risk of Drug Use", 
+                    "Margins of Error"
+            ]
+          }
+        }, {
+          "name": "Value",
+          "type": "number",
+          "dimension": false
+        }]
+      }
+    }
+  ],
+  "last_modified": "08/27/2018",
+  "ckan_extras": {
+    "full_description": {
+      "ckan_name": "Full Description",
+      "value": "Perception of Great Risk of Drug Use reports an estimated average percent of people who perceived great risk to themselves, physical or otherwise, when consuming certain drugs at various levels of frequency. These data are collected by the Substance Abuse and Mental Health Services Administration (SAMHSA) as part of the National Survey on Drug Use and Health (NSDUH) Substate Region Estimates by Age Group. This survey is conducted on a representative sample of U.S. civilian, non-institutionalized people ages 12 and older. Data are available for the state of Connecticut, substate region within Connecticut, the Northeast region of the United States, and the Total United States.",
+      "type": "string"
+    },
+    "suppression": {
+      "ckan_name": "Suppression",
+      "value": "Low precision estimates for small geographic areas have been suppressed.",
+      "type": "string"
+    },
+    "technical_notes": {
+      "ckan_name": "Technical Notes",
+      "value": "Margins of Error are reported with a 95% confidence interval.",
+      "type": "string"
+    },
+    "socrata": {
+      "ckan_name": "Socrata",
+      "value": "False",
+      "type": "string"
+    },
+    
+    "socrata_url": {
+      "ckan_name": "Socrata Dataset URL",
+      "value": "",
+      "type": "string"
+    },
+    "socrata_dataset_name": {
+      "ckan_name": "Socrata Dataset Name",
+      "value": "",
+      "type": "string"
+    }, 
+    
+    "domain": {
+      "ckan_name": "Domain",
+      "value": "Health",
+      "type": "string"
+    },
+    "subdomain": {
+      "ckan_name": "Subdomain",
+      "value": "Substance Abuse",
+      "type": "string"
+    },
+    "geography": {
+      "ckan_name": "Geography",
+      "value": "Region",
+      "type": "string",
+      "constraints": {"enum": ["Town", "County", "Town/County", "District", "Other"]}
+    },
+    "frequency": {
+      "ckan_name": "Frequency",
+      "value": "Other",
+      "type": "string"
+    },
+    "years_in_catalog": {
+      "ckan_name": "Years in Catalog",
+      "value": ["2004-2006", "2006-2008", "2008-2010", "2010-2012", "2012-2014"],
+      "type": "array"
+    },
+    "latest_year": {
+      "ckan_name": "Latest Year Available",
+      "value": "2012-2014",
+      "type": "string"
+    },
+    "disabled_views": {
+      "ckan_name": "Disabled Views",
+      "value": [],
+      "type": "array",
+      "constraints": {"enum": ["map", "table", "bar", "line"]}
+    },
+    "units": {
+      "ckan_name": "Units",
+      "value": {
+        "Number": "",
+        "Percent": "%"
+      }
+    },
+    "expected_number_of_geographies": {
+      "ckan_name": "Expected Number of Unique Geographies",
+      "value": 8,
+       "type": "string"
+      },  
+    "default": {      
+      "ckan_name": "Default",
+      "value": {
+        "Region": ["Connecticut"], 
+        "Year": "2012-2014",
+        "Measure Type": ["Percent"],
+        "Variable": ["Perception of Great Risk of Drug Use"]
+      },
+      "type": "object"
+    }  
+  },
+  "spot_checks": [
+
+  ],
+  "dimension_groups": [
+    {
+      "Age Range": ["12-17",
+                    "18-25",
+                    "Over 17",
+                    "Over 25"],
+      "Perception of Great Risk of Drug Use": ["Perceptions of Great Risk of Having Five or More Drinks of an Alcoholic Beverage Once or Twice a Week",
+                                               "Perceptions of Great Risk of Smoking Marijuana Once a Month",                                          
+                                               "Perceptions of Great Risk of Smoking One or More Packs of Cigarettes per Day"],
+      "Measure Type": ["Percent"],
+      "Variable": ["Perception of Great Risk of Drug Use", 
+                   "Margins of Error"]
+    }
+  ]
+}
